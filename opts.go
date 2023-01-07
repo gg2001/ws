@@ -10,15 +10,16 @@ import (
 
 // Default WebSocket client constants
 const (
-	DefaultReconnectionTimeout = 30 * time.Second
-	DefaultPingInterval        = 1 * time.Second
-	DefaultPongInterval        = 5 * time.Second
-	DefaultPingDeadline        = 10 * time.Second
+	DefaultReconnectionTimeout   = 30 * time.Second
+	DefaultPingInterval          = 1 * time.Second
+	DefaultPongInterval          = 5 * time.Second
+	DefaultPingDeadline          = 10 * time.Second
+	DefaultLinearBackoffDuration = 1 * time.Second
 )
 
 // Default WebSocket client variables
 var (
-	DefaultReconnectionBackoff = backoff.LinearBackoff(-1, 0)
+	DefaultReconnectionBackoff = backoff.LinearBackoff(-1, DefaultLinearBackoffDuration)
 )
 
 // Errors for invalid client options
